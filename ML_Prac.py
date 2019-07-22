@@ -37,19 +37,19 @@ def scatter_matrix(df):
 #========================================================================#
 
 # 讀入 csv 文字檔
-csv_file = "ML_Data_1563467378.csv"
-vib_df = pd.read_csv(csv_file, encoding='utf-8')
+csv_file = "ML_Data_1563783994"
+vib_df = pd.read_csv(csv_file + '.csv', encoding='utf-8')
 # print(type(vib_df))
 vib_df.head()
 
-
 # print(vib_df.iloc[1][4])
 
-vib_df_transpose = vib_df.transpose()
-vib_df_transpose.to_csv(csv_file[:-4] + '_output.csv', index=False, encoding='big5')
+vib_df_T = vib_df.T
+
+# vib_df_T.to_csv(csv_file + '_output.csv', index=False, encoding='big5')
 
 # scatter_matrix(vib_df) #plot scatter form of correlation matrix
-# corr_matrix(vib_df, 12, "kendall") #plot correlation matrix
+corr_matrix(vib_df_T, 12, "kendall") #plot correlation matrix
 #kendall
 #spearman
 
